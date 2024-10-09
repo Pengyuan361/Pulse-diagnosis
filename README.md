@@ -1,2 +1,4 @@
 # Pulse-diagnosis
-As a Test version
+
+目标：利用中医理论的脉诊算法分析健康状况，并在未来通过机器学习进行优化。
+技术栈：前期使用 Java 开发软件的 UI 框架，后续可能集成 Python 实现机器学习部分。
