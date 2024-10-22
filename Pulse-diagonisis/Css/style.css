@@ -1,0 +1,570 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: '宋体', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 设置背景颜色为黑色，字体颜色为白色 */
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* 响应式容器 */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* 示例媒体查询，针对屏幕宽度小于600px的设备 */
+@media (max-width: 600px) {
+  .container {
+      width: 100%;
+  }
+  body {
+      font-size: 18px;
+  }
+}
+
+nav {
+  background-color: #111;
+  padding: 10px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 18px;
+}
+/* 导航栏样式 */
+nav {
+  background-color: #111;
+  position: relative; /* 确保下拉菜单相对于导航栏定位 */
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+  /* margin: 0 auto; */
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #000;
+  margin-left: 10px;
+  
+}
+.nav-container span{
+  position: absolute;
+  left: 11%;
+  top:40%;
+  font-size: 23px;
+  font-family: 华文行楷;
+ 
+}
+
+.nav-links {
+  width: 800px;
+  display: flex;
+  position: absolute;
+  left: 40%;
+  top: 40%;
+
+}
+
+.nav-links li {
+ 
+  margin: 5px;
+  margin-left: 100px;
+  /* font-size: 30px;
+  font-family: 华文行楷; */
+
+  
+}
+
+.nav-links li a {
+  /* margin-left: 10px; */
+  color: #fff;
+  font-size: 30px;
+  font-family: 华文行楷;
+  transition: color 0.3s ease;
+}
+/* 默认所有导航链接为高亮白色 */
+.nav-links li a.dimmed {
+  color: #555;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background-color: #222;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  z-index: 1000;
+}
+
+/* 下拉内容的样式 */
+.dropdown-content {
+  padding: 20px;
+  display: none;
+}
+
+.dropdown-content ul {
+  list-style: none;
+  /* position: relative; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dropdown-content ul li {
+  width: 400px;
+  font-size: 40px;
+  font-family: 宋体;
+  margin: 10px 0;
+  justify-content: space-around;
+  align-items: flex-start;
+  /* position: absolute; */
+
+}
+
+.dropdown-content ul li a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dropdown-content ul li a:hover {
+  color: #ccc;
+}
+
+/* 下拉菜单展开时 */
+.dropdown-menu.show {
+  max-height: 500px; /* 根据内容高度调整 */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 模糊效果 */
+.blurred {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+/* 主要内容的层叠顺序 */
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+/* 聊天图标样式 */
+#chat-icon {
+  position: absolute; /* 改为 absolute */
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+
+#chat-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 对话框的遮罩层 */
+#chat-dialog {
+  display: none; /* 初始状态隐藏 */
+  position: fixed;
+  z-index: 300;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5); /* 半透明黑色背景 */
+}
+
+/* 对话框内容区域 */
+.dialog-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 距离顶部 10% */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 700px; /* 最大宽度 */
+  height: 600px;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* 关闭按钮 */
+.close-btn {
+  color: #aaa;
+  /* float: right; */
+  position: absolute;
+    right: 20px;
+    top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 对话框主体 */
+.dialog-body {
+  
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+
+}
+
+#chat-window {
+  flex: 1;
+  /* max-height: 300px; */
+  overflow-y: auto;
+  /* margin-bottom: 10px; */
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  scrollbar-width: none;
+}
+#chat-window::-webkit-scrollbar {
+  display: none;
+}
+.input-area {
+  display: flex;
+  margin-top: 10px;
+}
+#user-input {
+  flex: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#send-btn {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 华文行楷;
+  cursor: pointer;
+}
+/* 调整系统消息的字体样式 */
+.bot-message {
+  color: #007BFF; /* 您可以根据需要修改颜色，例如蓝色 */
+  font-size: 16px; /* 修改为您想要的字体大小 */
+  line-height: 1.5; /* 行高，可根据需要调整 */
+  font-family: "Microsoft YaHei", Arial, sans-serif; /* 字体，可根据需要调整 */
+}
+
+/* 调整用户消息的字体样式 */
+.user-message {
+  color: #333333; /* 用户消息的颜色 */
+  font-size: 16px; /* 字体大小 */
+  line-height: 1.5;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+/* 轮播图容器 */
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  margin: 50px auto; /* 居中 */
+  overflow: hidden;
+  border: 1px solid #0a0a0a;
+  border-radius: 10px;
+}
+
+/* 幻灯片容器 */
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* 单个幻灯片 */
+.slide {
+  min-width: 100%;
+  height: 800px;
+  box-sizing: border-box;
+  background-size: cover;
+}
+.slide:nth-child(1)
+{
+  background-image: url(../Picture/star1.jpg);
+}
+.slide:nth-child(2)
+{
+  background-image: url(../Picture/star2.jpg);
+}
+.slide:nth-child(3)
+{
+  background-image: url(../Picture/star3.jpg);
+}
+.slide span{
+  font-size: 40px;
+  font-family: 宋体;
+  line-height: 800px;
+}
+.slide:hover{
+  scale: (1.1);
+}
+
+/* 左右箭头按钮 */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* 左箭头 */
+.prev-btn {
+  left: 20px;
+}
+
+/* 右箭头 */
+.next-btn {
+  right: 20px;
+}
+
+/* 按钮悬停效果 */
+.carousel-btn:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* 指示器容器 */
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 指示器 */
+.indicator {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* 当前激活的指示器 */
+.indicator.active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* .card-slider-h2{
+  margin-left:8rem;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fefefe;
+} */
+
+
+/* 卡片滑块容器 */
+/* .card-slider { */
+  /* display: flex;               水平排列 */
+  /* gap: 20px;                   卡片之间的间距 */
+  /* overflow-x: auto;            超出部分可横向滚动 */
+  /* padding: 20px;               内边距 */
+  /* scroll-behavior: smooth;      平滑滚动 */
+  /* justify-content: space-around;      */
+/* } */
+
+/* 隐藏滚动条（可选） */
+/* .card-slider::-webkit-scrollbar {
+  display: none;
+} */
+/* 大卡片滑块容器 */
+.bigcard-slider {
+  margin: 40px 0; /* 上下外边距 */
+}
+
+/* 标题和控制按钮容器 */
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* 标题样式 */
+.card-slider-h2 {
+  font-size: 28px;
+  margin: 0;
+  color: #fff; /* 确保标题在黑色背景上可见 */
+}
+
+/* 控制按钮容器 */
+.slider-controls {
+  display: flex;
+  gap: 10px;
+}
+
+/* 控制按钮样式 */
+.slider-controls button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.slider-controls button:hover {
+  color: #007BFF; /* 悬停时改变颜色 */
+}
+
+.slider-controls button:disabled {
+  color: #555;
+  cursor: not-allowed;
+}
+
+/* 卡片滑块 */
+.card-slider {
+  display: flex;
+  overflow: hidden; /* 隐藏溢出内容 */
+  padding: 20px;
+  transition: transform 0.5s ease;
+}
+
+/* 卡片样式 */
+.card {
+  flex: 0 0 25%; 
+  margin-left: 70px;
+  /* 每个卡片占容器的 25% 宽度，即一行 4 个 */
+  /* flex:1; */
+  box-sizing: border-box;
+  padding: 0 10px; /* 卡片左右内边距 */
+  transition: transform 0.3s;
+  position: relative;
+  background-color: #fff; /* 卡片背景色 */
+  border-radius: 10px;    /* 圆角 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+  overflow: hidden;       /* 隐藏超出部分 */
+}
+
+/* 卡片背景图片（如果有） */
+.card::before {
+  content: '';
+  background-image: url('image.jpg'); /* 替换为实际图片路径 */
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 置于内容下方 */
+}
+
+/* 卡片在 hover 时的放大效果 */
+.card:hover {
+  transform: scale(1.05); /* 放大5% */
+}
+
+/* 卡片内容 */
+.card-content {
+  background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1; /* 确保位于背景图片之上 */
+  min-height: 200px; /* 根据需要调整 */
+}
+
+/* 标题样式 */
+.card-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* 描述文字样式 */
+.card-content p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* 隐藏滚动条 */
+.card-slider::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* 控制按钮样式 */
+.slider-controls .card-prev-btn,
+.slider-controls .card-next-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.slider-controls .card-prev-btn:hover,
+.slider-controls .card-next-btn:hover {
+  color: #007BFF; /* 悬停时改变颜色 */
+}
+
+.slider-controls .card-prev-btn:disabled,
+.slider-controls .card-next-btn:disabled {
+  color: #555;
+  cursor: not-allowed;
+}
+
+

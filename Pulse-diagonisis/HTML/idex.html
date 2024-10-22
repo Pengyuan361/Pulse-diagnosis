@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>脉搏诊断助手</title>
+    <!-- 视口设置，使页面在移动设备上响应良好 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="shortcut icon" href="../Picture/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="../Picture/favicon.ico" alt="Logo">
+            </a>
+            <span>Pulse-Diagnosis</span>
+            <ul class="nav-links">
+                <li><a href="#" data-menu="home">首页</a></li>
+            <li><a href="#" data-menu="features">功能介绍</a></li>
+            <li><a href="#" data-menu="contact">联系我们</a></li>
+            </ul>
+        </div>
+         <!-- 下拉菜单 -->
+    <div class="dropdown-menu">
+        <div class="dropdown-content" data-menu="home">
+            <!-- 首页的下拉内容 -->
+            <ul>
+                <li><a href="#">首页子菜单 1</a></li>
+                <li><a href="#">首页子菜单 2</a></li>
+                <li><a href="#">首页子菜单 2</a></li>
+                <li><a href="#">首页子菜单 2</a></li>
+                <li><a href="#">首页子菜单 2</a></li>
+                <li><a href="#">首页子菜单 2</a></li>
+                <li><a href="#">首页子菜单 2</a></li>
+                <li><a href="#">首页子菜单 2</a></li>
+            </ul>
+        </div>
+        <div class="dropdown-content" data-menu="features">
+            <!-- 功能介绍的下拉内容 -->
+            <ul>
+                <li><a href="#">功能 1</a></li>
+                <li><a href="#">功能 2</a></li>
+            </ul>
+        </div>
+        <div class="dropdown-content" data-menu="contact">
+            <!-- 联系我们的下拉内容 -->
+            <ul>
+                <li><a href="#">联系方式 1</a></li>
+                <li><a href="#">联系方式 2</a></li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+    <div id="chat-icon">
+        <!-- 可以使用字体图标或图片，这里使用一个简单的图标占位 -->
+        <img src="../Picture/favicon.ico" alt="Chat Icon" style="border-radius: 50%;">
+    </div>
+    <div id="chat-dialog">
+        <div class="dialog-content">
+            <span class="close-btn">&times;</span>
+            <div class="dialog-body">
+                <!-- 对话框内容 -->
+                <div id="chat-window">
+                    <!-- 这里将显示问答内容 -->
+                </div>
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="请输入您的脉搏数据...">
+                    <button id="send-btn">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="main-content">
+        <!-- 轮播图容器 -->
+        <div class="carousel">
+    <!-- 幻灯片容器 -->
+    <div class="carousel-slides">
+        <!-- 每个幻灯片 -->
+        <div class="slide">
+            <span>据科学研究脉搏诊断可以诊断出80%的病症</span>
+           
+        </div>
+        <div class="slide">
+           
+        </div>
+        <div class="slide">
+           
+        </div>
+        <!-- 可以添加更多幻灯片 -->
+    </div>
+
+    <!-- 左右箭头按钮 -->
+    <button class="carousel-btn prev-btn">&#10094;</button>
+    <button class="carousel-btn next-btn">&#10095;</button>
+
+    <div class="carousel-indicators">
+        <span class="indicator active" data-slide-to="0"></span>
+        <span class="indicator" data-slide-to="1"></span>
+        <span class="indicator" data-slide-to="2"></span>
+    </div>
+        </div>
+        <div class="bigcard-slider">
+            <div class="slider-header">
+                <h2 class="card-slider-h2">近期研究</h2>
+                <div class="slider-controls">
+                    <button class="card-prev-btn">&#8249;</button>
+                    <button class="card-next-btn">&#8250;</button>
+                </div>
+            </div>
+            <!-- 添加 card-slider 容器 -->
+            <div class="card-slider">
+                <!-- 卡片 1 -->
+                <div class="card">
+                    <a href="article1.html">
+                        <div class="card-content">
+                            <h2>标题一</h2>
+                            <p>这是第一篇文章的简短描述。</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- 卡片 2 -->
+                <div class="card">
+                    <a href="article2.html">
+                        <div class="card-content">
+                            <h2>标题二</h2>
+                            <p>这是第二篇文章的简短描述。</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- 卡片 3 -->
+                <div class="card">
+                    <a href="article3.html">
+                        <div class="card-content">
+                            <h2>标题三</h2>
+                            <p>这是第三篇文章的简短描述。</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-slider">
+                    <!-- 卡片 1 -->
+                    <div class="card">
+                        <a href="article1.html">
+                            <div class="card-content">
+                                <h2>标题一</h2>
+                                <p>这是第一篇文章的简短描述。</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-slider">
+                        <!-- 卡片 1 -->
+                        <div class="card">
+                            <a href="article1.html">
+                                <div class="card-content">
+                                    <h2>标题一</h2>
+                                    <p>这是第一篇文章的简短描述。</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-slider">
+                            <!-- 卡片 1 -->
+                            <div class="card">
+                                <a href="article1.html">
+                                    <div class="card-content">
+                                        <h2>标题一</h2>
+                                        <p>这是第一篇文章的简短描述。</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card-slider">
+                                <!-- 卡片 1 -->
+                                <div class="card">
+                                    <a href="article1.html">
+                                        <div class="card-content">
+                                            <h2>标题一</h2>
+                                            <p>这是第一篇文章的简短描述。</p>
+                                        </div>
+                                    </a>
+                                </div>
+                <!-- 更多卡片 -->
+                <!-- 确保所有卡片都在 card-slider 容器内 -->
+            </div>
+        </div>
+        
+
+
+</div> 
+      
+
+
+        
+    <!-- </div> -->
+    <script src="../JavaScript/script.js" defer></script>
+</body>
+</html>
